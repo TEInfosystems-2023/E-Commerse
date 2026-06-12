@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../Pages/Home/Home";
 import MainLayout from "../layouts/MainLayout";
 
 /* IMPORT HEADER PAGE */
