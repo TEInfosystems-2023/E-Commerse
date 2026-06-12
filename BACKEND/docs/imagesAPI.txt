@@ -1,0 +1,7 @@
+
+
+http://localhost:5000/images/fashion/mens-wear/slim-fit-casual-shirt.webp
+http://localhost:5000/images/fashion/mens-wear/athletic-joggers.avif
+http://localhost:5000/images/fashion/mens-wear/bomber-jacket.avif
+http://localhost:5000/images/fashion/mens-wear/casual-sneakers.webp
+http://localhost:5000/images/fashion/mens-wear/denim-jeans.webp

@@ -1,0 +1,14 @@
+
+
+
+# API Endpoints
+
+| Category | Method | API URL |
+|----------|---------|----------|
+| Health Check | GET | `http://localhost:5000/` |
+| Get All Categories | GET | `http://localhost:5000/api/categories` |
+| Get Category By ID | GET | `http://localhost:5000/api/categories/:categoryId` |
+| Get Subcategory By ID | GET | `http://localhost:5000/api/categories/:categoryId/subcategories/:subcategoryId` |
+| Get Subcategory Photos | GET | `http://localhost:5000/api/categories/:categoryId/subcategories/:subcategoryId/photos` |
+| Get All Products | GET | `http://localhost:5000/api/products` |
+| Product Image API | GET | `http://localhost:5000/images/fashion/bags/canvas-backpack.jpg` |

@@ -1,0 +1,115 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 58px;
+  background-color: #ade4fe;
+  border-bottom: 1px solid #caf1ff;
+}
+
+.topbar-inner {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-left {
+  gap: 0;
+}
+
+.topbar-right {
+  gap: 0;
+}
+
+.topbar-text,
+.topbar-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: #2f2f2f;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0 24px;
+  white-space: nowrap;
+}
+
+.topbar-text:first-child,
+.topbar-link:first-child {
+  padding-left: 0;
+}
+
+.topbar-link:last-child,
+.topbar-text:last-child {
+  padding-right: 0;
+}
+
+.topbar-text:not(:last-child)::after,
+.topbar-link:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 22px;
+  background-color: rgba(74, 74, 74, 0.45);
+}
+
+.topbar-link {
+  text-decoration: none;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.topbar-link:hover {
+  color: #4a0a92;
+}
+
+/* large tablet */
+@media (max-width: 1199px) {
+  .topbar-inner {
+    min-height: 52px;
+    gap: 18px;
+  }
+
+  .topbar-text,
+  .topbar-link {
+    font-size: 14px;
+    padding: 0 18px;
+  }
+}
+
+/* tablet */
+@media (max-width: 991px) {
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px 0;
+    min-height: auto;
+  }
+
+  .topbar-left,
+  .topbar-right {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
+
+/* mobile */
+@media (max-width: 575px) {
+  .topbar {
+    display: none;
+  }
+}

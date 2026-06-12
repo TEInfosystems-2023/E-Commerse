@@ -1,0 +1,150 @@
+
+/* header layout */
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+/* heading */
+.brand-heading h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  color: #2b2b2b;
+}
+
+.brand-heading p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #777;
+}
+
+/* view all */
+.brand-view-all {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.brand-view-all:hover {
+  text-decoration: underline;
+}
+
+/* mobile */
+@media (max-width: 575px) {
+  .brand-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .brand-heading h2 {
+    font-size: 22px;
+  }
+
+  .brand-view-all {
+    font-size: 13px;
+  }
+}
+.brand-marquee-section {
+  background-color:transparent;
+  padding: 20px 0 26px;
+  overflow: hidden;
+}
+
+.brand-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: max-content;
+  animation: brandMarqueeMove 28s linear infinite;
+}
+
+.brand-marquee-wrapper:hover .brand-marquee-track {
+  animation-play-state: running;
+}
+
+.brand-card {
+  width: 250px;
+  height: 124px;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.brand-card img {
+  max-width: 100%;
+  max-height: 64px;
+  object-fit: contain;
+  display: block;
+  filter: contrast(1.02);
+}
+
+@keyframes brandMarqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 14px));
+  }
+}
+
+/* large tablet */
+@media (max-width: 991px) {
+  .brand-marquee-section {
+    padding: 16px 0 22px;
+  }
+
+  .brand-marquee-track {
+    gap: 18px;
+    animation-duration: 22s;
+  }
+
+  .brand-card {
+    width: 210px;
+    height: 110px;
+    padding: 16px 18px;
+  }
+
+  .brand-card img {
+    max-height: 56px;
+  }
+}
+
+/* mobile */
+@media (max-width: 575px) {
+  .brand-marquee-section {
+    padding: 14px 0 18px;
+  }
+
+  .brand-marquee-track {
+    gap: 12px;
+    animation-duration: 18s;
+  }
+
+  .brand-card {
+    width: 160px;
+    height: 86px;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+
+  .brand-card img {
+    max-height: 40px;
+  }
+}

@@ -1,0 +1,289 @@
+.new-arrivals-section {
+  background-color: #f3f3f3;
+  padding: 34px 0 46px;
+}
+
+.new-arrivals-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.new-arrivals-header h2 {
+  margin: 0;
+  font-size: 58px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #26323a;
+  letter-spacing: -1px;
+}
+
+.new-arrivals-carousel {
+  position: relative;
+}
+
+.new-arrivals-track {
+  display: flex;
+  gap: 26px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 10px 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.new-arrivals-track::-webkit-scrollbar {
+  display: none;
+}
+
+.new-arrival-card {
+  position: relative;
+  flex: 0 0 270px;
+  min-width: 270px;
+  background-color: #f1d77b;
+  border-radius: 18px;
+  padding: 10px 8px 4px;
+  scroll-snap-align: start;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.new-arrival-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.14);
+}
+
+.new-arrival-tag {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  background-color: #f4c346;
+  color: #2b2b2b;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 10px 10px 0 10px;
+  z-index: 2;
+}
+
+.new-arrival-image-wrap {
+  position: relative;
+  height: 255px;
+  overflow: hidden;
+  border-radius: 14px;
+  background-color: #ffffff;
+}
+
+.new-arrival-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.new-arrival-card:hover .new-arrival-image-wrap img {
+  transform: scale(1.04);
+}
+
+.new-arrival-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
+}
+
+.new-arrival-title {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  z-index: 1;
+}
+
+.new-arrival-offer {
+  text-align: center;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.1;
+  padding: 10px 4px 2px;
+}
+
+.new-arrivals-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.25s ease;
+}
+
+.new-arrivals-arrow:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.04);
+}
+
+.new-arrivals-arrow-left {
+  left: -22px;
+}
+
+.new-arrivals-arrow-right {
+  right: -22px;
+}
+
+/* large desktop */
+@media (max-width: 1399px) {
+  .new-arrivals-header h2 {
+    font-size: 50px;
+  }
+
+  .new-arrival-card {
+    flex: 0 0 248px;
+    min-width: 248px;
+  }
+
+  .new-arrival-image-wrap {
+    height: 235px;
+  }
+}
+
+/* tablet */
+@media (max-width: 991px) {
+  .new-arrivals-section {
+    padding: 28px 0 38px;
+  }
+
+  .new-arrivals-header {
+    margin-bottom: 22px;
+  }
+
+  .new-arrivals-header h2 {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+
+  .new-arrivals-track {
+    gap: 18px;
+  }
+
+  .new-arrival-card {
+    flex: 0 0 228px;
+    min-width: 228px;
+    border-radius: 16px;
+  }
+
+  .new-arrival-image-wrap {
+    height: 208px;
+  }
+
+  .new-arrival-title {
+    font-size: 14px;
+  }
+
+  .new-arrival-offer {
+    font-size: 15px;
+  }
+
+  .new-arrival-tag {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  .new-arrivals-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .new-arrivals-arrow-left {
+    left: -12px;
+  }
+
+  .new-arrivals-arrow-right {
+    right: -12px;
+  }
+}
+
+/* mobile */
+@media (max-width: 575px) {
+  .new-arrivals-section {
+    padding: 20px 0 28px;
+  }
+
+  .new-arrivals-header {
+    margin-bottom: 16px;
+  }
+
+  .new-arrivals-header h2 {
+    font-size: 28px;
+  }
+
+  .new-arrivals-track {
+    gap: 12px;
+    padding: 6px 4px;
+  }
+
+  .new-arrival-card {
+    flex: 0 0 198px;
+    min-width: 198px;
+    border-radius: 14px;
+    padding: 8px 7px 4px;
+  }
+
+  .new-arrival-image-wrap {
+    height: 180px;
+    border-radius: 12px;
+  }
+
+  .new-arrival-title {
+    font-size: 12px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .new-arrival-offer {
+    font-size: 13px;
+    padding-top: 8px;
+  }
+
+  .new-arrival-tag {
+    top: -8px;
+    font-size: 11px;
+    padding: 6px 8px;
+    border-radius: 8px 8px 0 8px;
+  }
+
+  .new-arrivals-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .new-arrivals-arrow-left {
+    left: -4px;
+  }
+
+  .new-arrivals-arrow-right {
+    right: -4px;
+  }
+}

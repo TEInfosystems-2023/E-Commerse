@@ -1,0 +1,281 @@
+.deal-section {
+  background-color: #f3f3f3;
+  padding: 34px 0 48px;
+  overflow: hidden;
+}
+
+.deal-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.deal-header h2 {
+  margin: 0;
+  font-size: 58px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #26323a;
+  letter-spacing: -1px;
+}
+
+.deal-carousel {
+  position: relative;
+}
+
+.deal-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 10px 8px 18px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.deal-track::-webkit-scrollbar {
+  display: none;
+}
+
+.deal-card {
+  flex: 0 0 278px;
+  min-width: 278px;
+  background: linear-gradient(180deg, #f06a67 0%, #f3a23a 100%);
+  padding: 4px;
+  border-radius: 15px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  scroll-snap-align: start;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  cursor: pointer;
+}
+
+.deal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.deal-card-image {
+  width: 100%;
+  height: 255px;
+  overflow: hidden;
+  border-radius: 11px 11px 0 0;
+  background-color: #ffffff;
+}
+
+.deal-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.deal-card:hover .deal-card-image img {
+  transform: scale(1.05);
+}
+
+.deal-card-content {
+  background-color: #f8e9e4;
+  text-align: center;
+  padding: 13px 10px 14px;
+  border-radius: 0 0 11px 11px;
+}
+
+.deal-card-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f1f1f;
+  line-height: 1.2;
+}
+
+.deal-card-offer {
+  margin: 5px 0 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.15;
+}
+
+.deal-shop-btn {
+  margin-top: 12px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 22px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.deal-shop-btn:hover {
+  background: #e63956;
+  transform: translateY(-2px);
+}
+
+.deal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.25s ease;
+}
+
+.deal-arrow:hover {
+  background-color: #ff4d6d;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.04);
+}
+
+.deal-arrow-left {
+  left: -22px;
+}
+
+.deal-arrow-right {
+  right: -22px;
+}
+
+@media (max-width: 1399px) {
+  .deal-header h2 {
+    font-size: 50px;
+  }
+
+  .deal-card {
+    flex: 0 0 250px;
+    min-width: 250px;
+  }
+
+  .deal-card-image {
+    height: 230px;
+  }
+}
+
+@media (max-width: 991px) {
+  .deal-section {
+    padding: 28px 0 38px;
+  }
+
+  .deal-header {
+    margin-bottom: 22px;
+  }
+
+  .deal-header h2 {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+
+  .deal-track {
+    gap: 18px;
+  }
+
+  .deal-card {
+    flex: 0 0 236px;
+    min-width: 236px;
+  }
+
+  .deal-card-image {
+    height: 205px;
+  }
+
+  .deal-card-title {
+    font-size: 14px;
+  }
+
+  .deal-card-offer {
+    font-size: 15px;
+  }
+
+  .deal-shop-btn {
+    padding: 7px 17px;
+    font-size: 13px;
+  }
+
+  .deal-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .deal-arrow-left {
+    left: -12px;
+  }
+
+  .deal-arrow-right {
+    right: -12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .deal-section {
+    padding: 20px 0 28px;
+  }
+
+  .deal-header {
+    margin-bottom: 16px;
+  }
+
+  .deal-header h2 {
+    font-size: 28px;
+  }
+
+  .deal-track {
+    gap: 12px;
+    padding: 6px 4px 12px;
+  }
+
+  .deal-card {
+    flex: 0 0 200px;
+    min-width: 200px;
+    border-radius: 12px;
+    padding: 3px;
+  }
+
+  .deal-card-image {
+    height: 160px;
+    border-radius: 9px 9px 0 0;
+  }
+
+  .deal-card-content {
+    padding: 10px 8px 12px;
+    border-radius: 0 0 9px 9px;
+  }
+
+  .deal-card-title {
+    font-size: 12px;
+  }
+
+  .deal-card-offer {
+    font-size: 13px;
+  }
+
+  .deal-shop-btn {
+    margin-top: 9px;
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .deal-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .deal-arrow-left {
+    left: -4px;
+  }
+
+  .deal-arrow-right {
+    right: -4px;
+  }
+}
