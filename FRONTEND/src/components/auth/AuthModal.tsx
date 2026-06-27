@@ -1,5 +1,5 @@
 import "./AuthModal.css";
-     import { useState } from "react";
+import { useState } from "react";
 
 interface Props {
   onClose: () => void;
@@ -13,14 +13,17 @@ const AuthModal = ({ onClose }: Props) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Railway backend URL
+  const API_URL = "https://e-commerse-production-387e.up.railway.app";
+
   const handleLogin = async () => {
     if (!email || !password) {
       setError("Please enter email and password");
       return;
-    } 
+    }
 
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch(`${API_URL}/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +60,7 @@ const AuthModal = ({ onClose }: Props) => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/register", {
+      const response = await fetch(`${API_URL}/api/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,7 +143,7 @@ const AuthModal = ({ onClose }: Props) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-              
+
           {error && (
             <p style={{ color: "red", fontSize: "13px" }}>
               {error}
