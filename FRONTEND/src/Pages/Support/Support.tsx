@@ -94,7 +94,7 @@ const Support = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/ai/chat",
+        "https://e-commerse-production-387e.up.railway.app/api/ai/chat",
         {
           message: userMessage.text,
         }
