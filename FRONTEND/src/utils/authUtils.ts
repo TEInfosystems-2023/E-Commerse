@@ -1,13 +1,12 @@
-const USER_KEY = "user";
-
 export const isLoggedIn = () => {
-  return localStorage.getItem(USER_KEY) === "logged";
+  return localStorage.getItem("loggedIn") === "true";
 };
 
 export const login = () => {
-  localStorage.setItem(USER_KEY, "logged");
+  localStorage.setItem("loggedIn", "true");
 };
 
 export const logout = () => {
-  localStorage.removeItem(USER_KEY);
+  localStorage.removeItem("loggedIn");
+  localStorage.removeItem("user");
 };

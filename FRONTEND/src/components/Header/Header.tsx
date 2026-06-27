@@ -61,11 +61,16 @@ const Header = () => {
 
   // LOGOUT
   const handleLogout = () => {
-    if (!confirm("Logout from your account?")) return;
-    localStorage.removeItem("user");
-    setOpenProfile(false);
-    navigate("/");
-  };
+  if (!confirm("Logout from your account?")) return;
+
+  localStorage.removeItem("user");
+  localStorage.removeItem("loggedIn");
+
+  setOpenProfile(false);
+
+  navigate("/");
+  window.location.reload();
+};
 
   return (
     <header className="main-header">

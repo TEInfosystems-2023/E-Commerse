@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 import "./Support.css";
 
 type Message = {
@@ -77,58 +78,52 @@ const Support = () => {
 
   /* SEND MESSAGE */
 
-  const sendMessage = () => {
-
+  const sendMessage = async () => {
     if (!chatInput.trim()) return;
 
     const userMessage: Message = {
       id: Date.now(),
       sender: "user",
       text: chatInput,
-      time:
-        new Date().toLocaleTimeString(),
+      time: new Date().toLocaleTimeString(),
     };
 
-    const updated = [
-      ...messages,
-      userMessage,
-    ];
-
+    const updated = [...messages, userMessage];
     setMessages(updated);
-
-    localStorage.setItem(
-      "supportMessages",
-      JSON.stringify(updated)
-    );
-
     setChatInput("");
 
-    /* AUTO REPLY */
-
-    setTimeout(() => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/ai/chat",
+        {
+          message: userMessage.text,
+        }
+      );
 
       const botReply: Message = {
         id: Date.now() + 1,
         sender: "bot",
-        text:
-          "Our support team received your message and will help you shortly.",
-        time:
-          new Date().toLocaleTimeString(),
+        text: response.data.reply,
+        time: new Date().toLocaleTimeString(),
       };
 
-      const finalMessages = [
-        ...updated,
-        botReply,
-      ];
-
+      const finalMessages = [...updated, botReply];
       setMessages(finalMessages);
 
       localStorage.setItem(
         "supportMessages",
         JSON.stringify(finalMessages)
       );
+    } catch {
+      const botReply: Message = {
+        id: Date.now() + 1,
+        sender: "bot",
+        text: "Sorry, AI service is currently unavailable.",
+        time: new Date().toLocaleTimeString(),
+      };
 
-    }, 1200);
+      setMessages([...updated, botReply]);
+    }
   };
 
   /* ENTER KEY */

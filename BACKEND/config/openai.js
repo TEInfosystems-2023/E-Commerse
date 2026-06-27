@@ -1,7 +1,9 @@
-const OpenAI = require("openai");
+const { GoogleGenAI } = require("@google/genai");
 
-const openai = new OpenAI({
+const ai = new GoogleGenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-module.exports = openai;
+console.log("AI object:", ai);
+
+module.exports = ai;
