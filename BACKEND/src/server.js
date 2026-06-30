@@ -1,40 +1,44 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 
-require('./db');
+require("./db");
 
-const http = require('http');
-const path = require('path');
-const express = require('express');
-const cors = require('cors');
+const http = require("http");
+const path = require("path");
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
-const apiRoutes = require('./routes');
-const aiRoutes = require('./routes/aiRoutes');
-const { initSocket } = require('./socket');
+const apiRoutes = require("./routes");
+const aiRoutes = require("./routes/aiRoutes");
+const { initSocket } = require("./socket");
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: true,
+  credentials: true,
+}));
+
 app.use(express.json());
+app.use(cookieParser());
 
 // Static Folder
 app.use(
-  '/images',
-  express.static(path.join(__dirname, '..', 'public', 'images'))
+  "/images",
+  express.static(path.join(__dirname, "..", "public", "images"))
 );
 
-// Main API Routes
-app.use('/api', apiRoutes);
-
-// AI Routes
-app.use('/api/ai', aiRoutes);
+// API Routes
+app.use("/api", apiRoutes);
+app.use("/api/ai", aiRoutes);
 
 // Test Route
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json({
-    message: 'E-commerce backend is running.',
+    message: "E-commerce backend is running.",
   });
 });
 
@@ -45,10 +49,10 @@ const server = http.createServer(app);
 initSocket(server);
 
 // Error Handling
-server.on('error', (error) => {
-  if (error.code === 'EADDRINUSE') {
+server.on("error", (error) => {
+  if (error.code === "EADDRINUSE") {
     console.error(
-      `Port ${port} is already in use. Stop the existing process or change PORT in .env.`
+      `Port ${port} is already in use.`
     );
     process.exit(1);
   }
@@ -58,5 +62,5 @@ server.on('error', (error) => {
 
 // Start Server
 server.listen(port, () => {
-  console.log(`Server listening on http://localhost:${port}`);
+  console.log(`🚀 Server running on http://localhost:${port}`);
 });
